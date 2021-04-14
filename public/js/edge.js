@@ -1,6 +1,7 @@
-function Edge(a, b) {
+function Edge(a, b, label) {
   this.a = a;
   this.b = b;
+  this.label = label;
 }
 
 Edge.prototype = {

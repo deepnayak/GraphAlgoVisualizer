@@ -4,22 +4,24 @@
   <body class="body-main">
     <div class="title-container">
       <div class="title">
-        Minimum Spanning Tree Demonstration
+        Visualizer : Minimum Spanning Tree 
       </div>
       <div class="description">
         Visualization of <a href="https://en.wikipedia.org/wiki/Prim%27s_algorithm">Prim's algorithm</a> and <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's algorithm</a> to find the <a href="https://en.wikipedia.org/wiki/Minimum_spanning_tree">minimum spanning tree</a> of a graph.
       </div>
       <div class="link">
-        Made by Kotenko Yaroslav</a>.
+        Made by Deep Nayak(2019130045), Ojas Patil(2019130048), Pranav Nair(2019130042)</a>.
       </div>
     </div>
     <div id="snackbar">The Given Graph is not a Minimum Spanning Tree...</div>
+    <div id="snackbarr">The Graph is a Minimum Spanning Tree...</div>
     <div class="details-container">
       <div class="description">
-        Click anywhere to create a point.<br>Shift+Click on two nodes to create edge.<br><br>
+        Click anywhere to create a point.<br>Click a node again to select it for an edge.<br><br>
         <select id="select-algo" class="select-algo" name="algo">
           <option value="1">Prim's algorithm</option>
           <option value="2">Kruskal's algorithm</option>
+          <option value="3">Boruvka's algorithm</option>
         </select>
         <br>
         <button id="btn-compute" class="btn-main" type="button" name="compute">Compute</button>

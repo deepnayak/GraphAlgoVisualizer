@@ -2,20 +2,54 @@
 <html>
   {{> head}}
   <body class="body-main">
+    {{!-- <div class="box" style="padding-top: 30px;">
+      
+    </div> --}}
+
+    <div  class="title-container-up">
+      <div id="box1" class="snippet">
+        <h4 id="1" ></h4>
+      </div>
+      <div id="box2" class="snippet">
+        <h4 id="2" ></h4>
+      </div>
+      <div id="box3" class="snippet">
+        <h4 id="3" style="padding: left 15px;"></h4>
+      </div>
+      <div id="box4" class="snippet">
+        <h4 id="4" style="padding: left 22px;"></h4>
+      </div>
+      <div id="box5" class="snippet">
+        <h4 id="5" style="padding: left 15px;"></h4>
+      </div>
+      <div id="box6" class="snippet">
+        <h4 id="6" ></h4>
+      </div>
+    </div>
+
     <div class="title-container">
       <div class="title">
         Visualizer : Minimum Spanning Tree 
       </div>
       <div class="description">
-        Visualization of <a href="https://en.wikipedia.org/wiki/Prim%27s_algorithm">Prim's algorithm</a> and <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's algorithm</a> to find the <a href="https://en.wikipedia.org/wiki/Minimum_spanning_tree">minimum spanning tree</a> of a graph.
+        Visualization of <a href="https://en.wikipedia.org/wiki/Prim%27s_algorithm">Prim's algorithm</a>, <a href="https://en.wikipedia.org/wiki/Kruskal%27s_algorithm">Kruskal's algorithm </a> and <a href="https://en.wikipedia.org/wiki/Bor%C5%AFvka%27s_algorithm">Boruvka's algorithm</a> to find the <a href="https://en.wikipedia.org/wiki/Minimum_spanning_tree">minimum spanning tree</a> of a graph.
       </div>
       <div class="link">
         Made by Deep Nayak(2019130045), Ojas Patil(2019130048), Pranav Nair(2019130042)</a>.
       </div>
     </div>
-    <div id="snackbar">The Given Graph is not a Minimum Spanning Tree...</div>
-    <div id="snackbarr">The Graph is a Minimum Spanning Tree...</div>
+    <div id="snackbar">The given graph is disjoint</div>
+    <div id="snackbarr">Minimum Spanning Tree</div>
     <div class="details-container">
+      <div class="container">
+        <div class="round">
+          <input type="checkbox" id="checkbox" />
+          <label for="checkbox"></label>
+          <p style="color: white;"> Draw </p>
+        </div>
+      </div>
+      <div style="color: white;">Speed: </div>
+      <div id="slider-1" style="height: 10px; margin:15px;"></div>
       <div class="description">
         Click anywhere to create a point.<br>Click a node again to select it for an edge.<br><br>
         <select id="select-algo" class="select-algo" name="algo">

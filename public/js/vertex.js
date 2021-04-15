@@ -1,8 +1,9 @@
-function Vertex(x, y, circle) {
+function Vertex(x, y, circle, label) {
   this.x = x;
   this.y = y;
   this.adj = [];
   this.circle = circle;
+  this.label = label;
 }
 
 Vertex.prototype = {

@@ -11,8 +11,14 @@ function UnionFind(n) {
 
 UnionFind.prototype = {
   find: function(p) {
+    var initialP = p;
     while (p != this.id[p]) {
       p = this.id[p];
+    }
+    while (initialP != this.id[initialP]) {
+      var temp = this.id[initialP]
+      this.id[initialP] = p;
+      initialP = temp;
     }
     return p;
   },

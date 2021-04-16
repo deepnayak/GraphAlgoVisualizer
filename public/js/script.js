@@ -418,6 +418,17 @@ $('#btn-compute').click(function() {
     });
   }
   else if (algo == BORUVKA) {
+
+    ele = document.getElementById("2");
+    ele.innerHTML = "for each vertex in V";
+    ele = document.getElementById("3");
+    ele.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;find its minimum edge and add to set";
+    ele = document.getElementById("4");
+    ele.innerHTML = "for sets in disjoint sets";
+    ele = document.getElementById("5");
+    ele.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;union(sets) ";
+
+
     boruvkasAlgorithm(vertices, function(mst) {
       if (!mst || typeof mst == 'undefined') {
         return;
@@ -458,7 +469,16 @@ $('#btn-compute').click(function() {
         console.log(edges[d].label);
         //edges[d].label.fillColor = 'grey';
       }
-
+      document.getElementById("box1").style.background = 'black';
+      document.getElementById("1").style.color = 'white';
+      
+      document.getElementById("box2").style.background = 'yellow';
+      document.getElementById("2").style.color = 'black';
+      document.getElementById("box2").style.visibility = 'visible';
+      document.getElementById("box3").style.background = 'yellow';
+      document.getElementById("3").style.color = 'black';
+      document.getElementById("box3").style.visibility = 'visible';
+      
       drawEdges(mst, 0, algo);
     });
   }
@@ -604,6 +624,19 @@ function drawEdges(mst, i, algo) {
         document.getElementById("box4").style.background = 'black';
         document.getElementById("4").style.color = 'white';//'#F52828';
       }
+      else if(algo == BORUVKA)
+      {
+        document.getElementById("box2").style.background = 'black';
+        document.getElementById("2").style.color = 'white';
+        document.getElementById("box3").style.background = 'black';
+        document.getElementById("3").style.color = 'white';
+        ele = document.getElementById("box4");
+        ele.style.visibility = 'visible';
+        document.getElementById("box4").style.background = 'yellow';
+        document.getElementById("4").style.color = 'black';//'#F52828';
+        document.getElementById("box5").style.background = 'black';
+        document.getElementById("5").style.color = 'white';//'#F52828';
+      }
       mst[0].a.circle.strokeColor = '#66ff00';
       var a = new Point(edge.a.x, edge.a.y);
       var b = new Point(edge.b.x, edge.b.y);
@@ -611,20 +644,41 @@ function drawEdges(mst, i, algo) {
       mstPath.strokeColor = '#98FB98';
       mstPath.strokeWidth = 3;
 
-      ele = document.getElementById("box4");
-      ele.style.visibility = 'visible';
-      document.getElementById("box3").style.background = 'black';
-      document.getElementById("3").style.color = 'white';//'#F52828';
-      if (i < mst.length - 1)
+      if(algo != BORUVKA)
       {
-        document.getElementById("box4").style.background = 'yellow';//'#F52828';
-        document.getElementById("4").style.color = 'black';//'#F52828';
+        ele = document.getElementById("box4");
+        ele.style.visibility = 'visible';
+        document.getElementById("box3").style.background = 'black';
+        document.getElementById("3").style.color = 'white';//'#F52828';
+        if (i < mst.length - 1)
+        {
+          document.getElementById("box4").style.background = 'yellow';//'#F52828';
+          document.getElementById("4").style.color = 'black';//'#F52828';
+        }
+        else
+        {
+          document.getElementById("box4").style.background = 'black';
+          document.getElementById("4").style.color = 'white';
+        }
       }
       else
       {
+        ele = document.getElementById("box5");
+        ele.style.visibility = 'visible';
         document.getElementById("box4").style.background = 'black';
-        document.getElementById("4").style.color = 'white';
+        document.getElementById("4").style.color = 'white';//'#F52828';
+        if (i < mst.length - 1)
+        {
+          document.getElementById("box5").style.background = 'yellow';//'#F52828';
+          document.getElementById("5").style.color = 'black';//'#F52828';
+        }
+        else
+        {
+          document.getElementById("box5").style.background = 'black';
+          document.getElementById("5").style.color = 'white';
+        }
       }
+      
         // mid = mstPath.length/2;
       // midpt = mstPath.getPointAt(mid);
       // normal = mstPath.getNormalAt(mid) * 20;
